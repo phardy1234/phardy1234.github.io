@@ -1,0 +1,177 @@
+/* ============================================================
+   base.css — element-level defaults & global behaviors
+   ============================================================ */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 1rem);
+  color-scheme: light dark;
+}
+
+body {
+  font-family: var(--font-mono);
+  font-size: var(--fs-base);
+  line-height: var(--lh-body);
+  background: var(--bg);
+  color: var(--ink);
+  transition: background var(--t-med) var(--ease), color var(--t-med) var(--ease);
+  /* visible grid texture for that brutalist feel */
+  background-image:
+    linear-gradient(to right,  rgba(17,17,17,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17,17,17,0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* When the dark theme paints in, swap the grid color so the lines
+   stay visible against the dark background. */
+.theme-dark body,
+:root:not(.theme-light) body {
+  background-image:
+    linear-gradient(to right,  rgba(244,241,234,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(244,241,234,0.05) 1px, transparent 1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: var(--fs-xxl); }
+h2 { font-size: var(--fs-xl);  }
+h3 { font-size: var(--fs-lg);  }
+
+p { line-height: var(--lh-body); }
+
+a {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--accent);
+  transition: color var(--t-fast) var(--ease),
+              text-decoration-color var(--t-fast) var(--ease);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--accent);
+  text-decoration-color: var(--ink);
+}
+
+/* Universal focus ring — never invisible, always brutalist. */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Skip link, hidden until focused. */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 1000;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 0.75rem 1rem;
+  border: var(--border);
+  font-weight: 700;
+  text-decoration: none;
+}
+.skip-link:focus { top: 1rem; }
+
+/* The toggle inputs are visually hidden but stay accessible
+   to label clicks. Because they live just inside <body>, their
+   :checked state can drive any descendant via the ~ combinator. */
+.state-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+  white-space: nowrap;
+}
+
+/* ---------- Reusable section label ---------- */
+.section-label {
+  display: inline-block;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: var(--space-2) var(--space-4);
+  margin-bottom: var(--space-6);
+  background: var(--ink);
+  color: var(--bg);
+  border: var(--border);
+  box-shadow: var(--shadow-hard-sm);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: var(--space-3) var(--space-5);
+  border: var(--border-thick);
+  background: var(--bg);
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: var(--shadow-hard);
+  transition: transform var(--t-fast) var(--ease),
+              box-shadow var(--t-fast) var(--ease),
+              background var(--t-fast) var(--ease);
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--accent);
+  text-decoration: none;
+}
+
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 var(--ink);
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn--ghost {
+  background: transparent;
+}
+
+/* ---------- Status dot ---------- */
+.dot {
+  display: inline-block;
+  width: 0.7em; height: 0.7em;
+  margin-right: 0.4em;
+  background: var(--ink);
+  vertical-align: 0.05em;
+}
+.dot--live {
+  background: var(--accent);
+  animation: pulse 1.6s var(--ease) infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1);   opacity: 1;   }
+  50%      { transform: scale(1.4); opacity: 0.6; }
+}

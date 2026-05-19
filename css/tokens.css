@@ -1,0 +1,103 @@
+/* ============================================================
+   tokens.css — design tokens (colors, type, space, motion)
+   Light theme is the default. The theme-toggle checkbox flips
+   the variables — see interactive.css for the override rule.
+   ============================================================ */
+
+:root {
+  /* ---------- Color tokens (light theme defaults) ---------- */
+  --bg:        #f4f1ea;   /* off-white paper */
+  --bg-alt:    #ebe6d8;   /* slightly darker for striped sections */
+  --ink:       #111111;   /* near-black text & borders */
+  --ink-soft:  #3a3a3a;
+  --muted:     #6a6a6a;
+  --accent:    #6200ff;   /* hot brutalist orange */
+  --accent-ink: #111111;  /* readable ink on accent backgrounds */
+  --hairline:  #111111;
+
+  /* ---------- Typography ---------- */
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas,
+               "Courier New", monospace;
+  --font-display: var(--font-mono);
+
+  --fs-xs:   0.75rem;
+  --fs-sm:   0.875rem;
+  --fs-base: 1rem;
+  --fs-md:   1.125rem;
+  --fs-lg:   1.5rem;
+  --fs-xl:   clamp(1.75rem, 3vw + 1rem, 2.75rem);
+  --fs-xxl:  clamp(3rem, 8vw + 1rem, 6.5rem);
+
+  --lh-tight: 1.05;
+  --lh-snug:  1.25;
+  --lh-body:  1.55;
+
+  /* ---------- Spacing scale ---------- */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.5rem;
+  --space-6:  2rem;
+  --space-7:  3rem;
+  --space-8:  4rem;
+  --space-9:  6rem;
+
+  /* ---------- Layout ---------- */
+  --container-max: 1200px;
+  --container-pad: clamp(1rem, 4vw, 2.5rem);
+  --header-height: 4rem;
+
+  /* ---------- Borders / shadows (the brutalist signature) ---------- */
+  --border-w: 2px;
+  --border:   var(--border-w) solid var(--ink);
+  --border-thick: 3px solid var(--ink);
+  --shadow-hard:    6px 6px 0 var(--ink);
+  --shadow-hard-sm: 3px 3px 0 var(--ink);
+  --shadow-hover:   10px 10px 0 var(--accent);
+
+  /* ---------- Motion ---------- */
+  --t-fast: 120ms;
+  --t-med:  220ms;
+  --ease:   cubic-bezier(0.2, 0, 0, 1);
+
+  /* ---------- Market data ---------- */
+  --market-up:   #007a3d;
+  --market-down: #c41a00;
+}
+
+/* ----------------------------------------------------------------
+   Dark theme — applied when #theme-toggle is checked.
+   The selector lives in interactive.css; the variable values live
+   here so all theming tokens stay in one file.
+   ---------------------------------------------------------------- */
+.theme-dark {
+  --bg:        #111111;
+  --bg-alt:    #1a1a1a;
+  --ink:       #f4f1ea;
+  --ink-soft:  #d4cfbf;
+  --muted:     #9a9a9a;
+  --accent:    #ae00ff;
+  --accent-ink: #111111;
+  --hairline:  #f4f1ea;
+  --market-up:   #00c86e;
+  --market-down: #ff5c42;
+}
+
+/* Honor the OS-level preference when the user hasn't manually toggled.
+   The manual toggle (.theme-dark on <html>) overrides via specificity
+   because it's an explicit user gesture. */
+@media (prefers-color-scheme: dark) {
+  :root:not(.theme-light) {
+    --bg:        #111111;
+    --bg-alt:    #1a1a1a;
+    --ink:       #f4f1ea;
+    --ink-soft:  #d4cfbf;
+    --muted:     #9a9a9a;
+    --accent:    #ff3a00;
+    --accent-ink: #111111;
+    --hairline:  #f4f1ea;
+    --market-up:   #00c86e;
+    --market-down: #ff5c42;
+  }
+}
