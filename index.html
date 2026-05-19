@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of [Your Name] — web developer. Built with HTML and CSS. Zero JavaScript.">
+  <meta name="color-scheme" content="light dark">
+  <title>[Your Name] // Web Developer</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/interactive.css">
+  <link rel="stylesheet" href="css/market.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#top">Skip to content</a>
+
+  <input type="checkbox" id="theme-toggle" class="state-input" aria-hidden="true" tabindex="-1">
+  <input type="checkbox" id="nav-toggle"   class="state-input" aria-hidden="true" tabindex="-1">
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="#top">
+        <span class="brand__bracket">[</span>YOUR NAME<span class="brand__bracket">]</span>
+      </a>
+
+      <label for="nav-toggle" class="hamburger" role="button" tabindex="0" aria-label="Toggle navigation menu">
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </label>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <ul class="primary-nav__list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#market">Market</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <label for="theme-toggle" class="theme-switch" role="button" tabindex="0" aria-label="Toggle light and dark theme">
+        <span class="theme-switch__icon theme-switch__icon--sun" aria-hidden="true">SUN</span>
+        <span class="theme-switch__icon theme-switch__icon--moon" aria-hidden="true">MOON</span>
+      </label>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO + ABOUT ====================================================== -->
+    <section id="about" class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="hero__eyebrow">// PORTFOLIO_v1.0</p>
+          <h1 class="hero__title">
+            HI, I&rsquo;M<br>
+            <span class="hero__name">YOUR&nbsp;NAME</span>.
+          </h1>
+          <p class="hero__tagline">
+            I build the web with stubborn HTML, opinionated CSS, and absolutely zero JavaScript.
+          </p>
+          <div class="hero__cta-row">
+            <a class="btn btn--primary" href="#projects">SEE THE WORK &rarr;</a>
+            <a class="btn btn--ghost" href="#contact">GET IN TOUCH</a>
+          </div>
+        </div>
+
+        <aside class="hero__card" aria-label="At a glance">
+          <h2 class="hero__card-title">// AT_A_GLANCE</h2>
+          <dl class="hero__card-list">
+            <dt>BASED IN</dt><dd>Earth, mostly</dd>
+            <dt>FOCUS</dt><dd>Static sites, design systems</dd>
+            <dt>YEARS</dt><dd>Many. Some good ones.</dd>
+            <dt>STATUS</dt><dd><span class="dot dot--live"></span>Available for work</dd>
+          </dl>
+        </aside>
+      </div>
+
+      <div class="container">
+        <div class="about">
+          <h2 class="section-label">// ABOUT</h2>
+          <p class="about__lede">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. I make websites the way carpenters make
+            chairs: one well-cut joint at a time, with tools you can sharpen yourself.
+          </p>
+          <details class="about__more">
+            <summary>More about me &raquo;</summary>
+            <div class="about__more-body">
+              <p>
+                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim id est laborum.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS ========================================================== -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2 class="section-label">// PROJECTS</h2>
+
+        <input type="radio" name="filter" id="f-all" class="state-input" checked>
+        <input type="radio" name="filter" id="f-web" class="state-input">
+        <input type="radio" name="filter" id="f-cli" class="state-input">
+        <input type="radio" name="filter" id="f-other" class="state-input">
+
+        <div class="filter-tabs" role="tablist" aria-label="Project filters">
+          <label for="f-all"   class="filter-tab" role="tab" tabindex="0">ALL</label>
+          <label for="f-web"   class="filter-tab" role="tab" tabindex="0">WEB</label>
+          <label for="f-cli"   class="filter-tab" role="tab" tabindex="0">CLI</label>
+          <label for="f-other" class="filter-tab" role="tab" tabindex="0">OTHER</label>
+        </div>
+
+        <ul class="project-grid">
+
+          <li class="project-card" data-cat="web">
+            <a href="#" class="project-card__link">
+              <div class="project-card__thumb">
+                <img src="assets/img/project-01.svg" alt="" loading="lazy">
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__tag">WEB</span>
+                <h3 class="project-card__title">PROJECT_ONE</h3>
+                <p class="project-card__desc">
+                  A lorem ipsum static-site generator that turns markdown into something actually readable.
+                </p>
+                <span class="project-card__cta">VIEW &rarr;</span>
+              </div>
+            </a>
+          </li>
+
+          <li class="project-card" data-cat="web">
+            <a href="#" class="project-card__link">
+              <div class="project-card__thumb">
+                <img src="assets/img/project-02.svg" alt="" loading="lazy">
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__tag">WEB</span>
+                <h3 class="project-card__title">PROJECT_TWO</h3>
+                <p class="project-card__desc">
+                  Consectetur adipiscing landing-page kit, mobile-first, no framework, no apologies.
+                </p>
+                <span class="project-card__cta">VIEW &rarr;</span>
+              </div>
+            </a>
+          </li>
+
+          <li class="project-card" data-cat="cli">
+            <a href="#" class="project-card__link">
+              <div class="project-card__thumb">
+                <img src="assets/img/project-03.svg" alt="" loading="lazy">
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__tag">CLI</span>
+                <h3 class="project-card__title">PROJECT_THREE</h3>
+                <p class="project-card__desc">
+                  Sed do eiusmod terminal tool that does one thing well and complains loudly when misused.
+                </p>
+                <span class="project-card__cta">VIEW &rarr;</span>
+              </div>
+            </a>
+          </li>
+
+          <li class="project-card" data-cat="cli">
+            <a href="#" class="project-card__link">
+              <div class="project-card__thumb">
+                <img src="assets/img/project-04.svg" alt="" loading="lazy">
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__tag">CLI</span>
+                <h3 class="project-card__title">PROJECT_FOUR</h3>
+                <p class="project-card__desc">
+                  Tempor incididunt git plugin that makes branch management slightly less of a tragedy.
+                </p>
+                <span class="project-card__cta">VIEW &rarr;</span>
+              </div>
+            </a>
+          </li>
+
+          <li class="project-card" data-cat="other">
+            <a href="#" class="project-card__link">
+              <div class="project-card__thumb">
+                <img src="assets/img/project-05.svg" alt="" loading="lazy">
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__tag">OTHER</span>
+                <h3 class="project-card__title">PROJECT_FIVE</h3>
+                <p class="project-card__desc">
+                  Ut enim ad minim physical-web hardware experiment that occasionally even works.
+                </p>
+                <span class="project-card__cta">VIEW &rarr;</span>
+              </div>
+            </a>
+          </li>
+
+          <li class="project-card" data-cat="other">
+            <a href="#" class="project-card__link">
+              <div class="project-card__thumb">
+                <img src="assets/img/project-06.svg" alt="" loading="lazy">
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__tag">OTHER</span>
+                <h3 class="project-card__title">PROJECT_SIX</h3>
+                <p class="project-card__desc">
+                  Veniam quis nostrud zine, hand-set in a monospace typeface and printed on real paper.
+                </p>
+                <span class="project-card__cta">VIEW &rarr;</span>
+              </div>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- SKILLS ============================================================ -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <h2 class="section-label">// SKILLS</h2>
+        <ul class="skill-grid">
+          <li class="skill"><span class="skill__name">HTML5</span><span class="skill__level">CORE</span></li>
+          <li class="skill"><span class="skill__name">CSS3</span><span class="skill__level">CORE</span></li>
+          <li class="skill"><span class="skill__name">ACCESSIBILITY</span><span class="skill__level">CORE</span></li>
+          <li class="skill"><span class="skill__name">RESPONSIVE</span><span class="skill__level">CORE</span></li>
+          <li class="skill"><span class="skill__name">DESIGN&nbsp;SYSTEMS</span><span class="skill__level">FLUENT</span></li>
+          <li class="skill"><span class="skill__name">SVG</span><span class="skill__level">FLUENT</span></li>
+          <li class="skill"><span class="skill__name">GIT</span><span class="skill__level">FLUENT</span></li>
+          <li class="skill"><span class="skill__name">FIGMA</span><span class="skill__level">FLUENT</span></li>
+          <li class="skill"><span class="skill__name">PERFORMANCE</span><span class="skill__level">PRACTICED</span></li>
+          <li class="skill"><span class="skill__name">SEO</span><span class="skill__level">PRACTICED</span></li>
+          <li class="skill"><span class="skill__name">DEPLOYMENT</span><span class="skill__level">PRACTICED</span></li>
+          <li class="skill"><span class="skill__name">DOCUMENTATION</span><span class="skill__level">PRACTICED</span></li>
+        </ul>
+
+        <details class="faq">
+          <summary>Frequently asked &raquo;</summary>
+          <div class="faq__body">
+            <details>
+              <summary>Why no JavaScript?</summary>
+              <p>Because you can build a great deal with the platform itself, and what you don&rsquo;t ship can&rsquo;t break. This site is the proof.</p>
+            </details>
+            <details>
+              <summary>Are you available for freelance?</summary>
+              <p>Yes &mdash; small static sites, marketing pages, design-system audits. Drop a note via the contact section.</p>
+            </details>
+            <details>
+              <summary>Do you write back-end code?</summary>
+              <p>I&rsquo;ve been known to. The front-of-the-front is where I do my best work.</p>
+            </details>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- MARKET DATA ======================================================= -->
+    <section id="market" class="market">
+      <div class="container">
+        <h2 class="section-label">// LIVE_MARKET_DATA</h2>
+
+        <div id="market-error" class="market-error" hidden aria-live="assertive"></div>
+
+        <div class="market-grid">
+
+          <div class="market-subsection">
+            <h3 class="market-subsection__heading">// FX_RATES</h3>
+            <ul class="ticker-list" id="fx-list" aria-label="Foreign exchange rates" aria-live="polite">
+              <!-- populated by JavaScript -->
+            </ul>
+          </div>
+
+          <div class="market-subsection">
+            <h3 class="market-subsection__heading">// EQUITIES</h3>
+            <ul class="ticker-list" id="equity-list" aria-label="Equity prices" aria-live="polite">
+              <!-- populated by JavaScript -->
+            </ul>
+          </div>
+
+        </div>
+
+        <p class="market-meta">
+          <span id="market-updated">AWAITING DATA...</span>
+          <span>&middot; AUTO-REFRESH 60s &middot; NEXT IN <span id="market-countdown">60</span>s</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT =========================================================== -->
+    <section id="contact" class="contact">
+      <div class="container contact__grid">
+        <div class="contact__intro">
+          <h2 class="section-label">// CONTACT</h2>
+          <p class="contact__lede">
+            Got a project, an idea, or a just-curious question? Send a signal.
+          </p>
+          <ul class="social-list">
+            <li><a class="social-link" href="mailto:hello@example.com">EMAIL &rarr;</a></li>
+            <li><a class="social-link" href="https://github.com/" rel="me noopener">GITHUB &rarr;</a></li>
+            <li><a class="social-link" href="https://www.linkedin.com/" rel="me noopener">LINKEDIN &rarr;</a></li>
+            <li><a class="social-link" href="https://bsky.app/" rel="me noopener">BLUESKY &rarr;</a></li>
+          </ul>
+        </div>
+
+        <form class="contact-form" action="mailto:hello@example.com" method="post" enctype="text/plain" aria-label="Contact form">
+          <p class="contact-form__note">// FORM_NOTE: this opens your mail client &mdash; no JavaScript here.</p>
+
+          <label class="field">
+            <span class="field__label">NAME</span>
+            <input class="field__input" type="text" name="name" required autocomplete="name" placeholder="Your name">
+          </label>
+
+          <label class="field">
+            <span class="field__label">EMAIL</span>
+            <input class="field__input" type="email" name="email" required autocomplete="email" placeholder="you@example.com">
+          </label>
+
+          <label class="field">
+            <span class="field__label">MESSAGE</span>
+            <textarea class="field__input field__input--area" name="message" required rows="5" placeholder="Say something."></textarea>
+          </label>
+
+          <button class="btn btn--primary" type="submit">SEND &rarr;</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="site-footer__copy">
+        &copy; <time datetime="2026">2026</time> YOUR&nbsp;NAME &mdash;
+        <span>Hand-built with HTML &amp; CSS. No JavaScript was harmed in the making of this portfolio.</span>
+      </p>
+      <p class="site-footer__meta">
+        <a href="#top">BACK TO TOP &uarr;</a>
+      </p>
+    </div>
+  </footer>
+<script src="./script.js"></script>
+</body>
+</html>
