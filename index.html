@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Paul Hardy – Front-End Developer portfolio">
+  <title>Paul Hardy | Front-End Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── Navigation ─────────────────────────────────────────── -->
+  <nav class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#hero" class="nav__logo">PH<span class="nav__dot">.</span></a>
+      <button class="nav__burger" id="nav-burger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="#about"    class="nav__link">About</a></li>
+        <li><a href="#projects" class="nav__link">Projects</a></li>
+        <li><a href="#skills"   class="nav__link">Skills</a></li>
+        <li><a href="#market"   class="nav__link">Market</a></li>
+        <li><a href="#crypto"    class="nav__link">Crypto</a></li>
+        <li><a href="#countries" class="nav__link">Countries</a></li>
+        <li><a href="#contact"   class="nav__link nav__link--cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── Hero ───────────────────────────────────────────────── -->
+    <section id="hero" class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="hero__greeting">Hi there, I'm</p>
+          <h1 class="hero__name">Paul Hardy<span class="hero__accent">.</span></h1>
+          <h2 class="hero__role">Front-End <span class="gradient-text">Developer</span></h2>
+          <p class="hero__bio">
+            I'm a passionate front-end developer based in the UK, building
+            clean, responsive web experiences that look great and work beautifully.
+          </p>
+          <div class="hero__cta">
+            <a href="#projects" class="btn btn--primary">View my work</a>
+            <a href="#contact"  class="btn btn--outline">Get in touch</a>
+          </div>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__ring hero__ring--outer"></div>
+          <div class="hero__ring hero__ring--inner"></div>
+          <div class="hero__avatar">PH</div>
+        </div>
+      </div>
+      <a href="#about" class="hero__scroll-hint" aria-label="Scroll to About">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M10 4v12M4 10l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </section>
+
+    <!-- ── About ──────────────────────────────────────────────── -->
+    <section id="about" class="about section">
+      <div class="container">
+        <p class="section__label">Who I am</p>
+        <h2 class="section__title">About Me</h2>
+        <div class="about__grid">
+          <div class="about__body">
+            <p>
+              I'm Paul — a front-end developer at the very start of an exciting journey into web
+              development. I love turning ideas into interactive, polished websites, and I'm
+              constantly learning new tools and techniques.
+            </p>
+            <p>
+              When I'm not coding, you might find me exploring new technologies, building
+              side projects, or diving into financial data — I recently built a live FTSE 100
+              stock tracker from scratch!
+            </p>
+            <p>
+              I'm currently looking for opportunities to grow as a developer and contribute
+              to real-world projects. If you think we'd work well together, I'd love to hear from you.
+            </p>
+            <a href="#contact" class="btn btn--primary" style="margin-top:2rem">Let's talk</a>
+          </div>
+          <div class="about__cards">
+            <div class="info-card">
+              <span class="info-card__icon">🎯</span>
+              <strong>Focus</strong>
+              <p>Front-End &amp; UI</p>
+            </div>
+            <div class="info-card">
+              <span class="info-card__icon">📍</span>
+              <strong>Location</strong>
+              <p>United Kingdom</p>
+            </div>
+            <div class="info-card">
+              <span class="info-card__icon">📚</span>
+              <strong>Learning</strong>
+              <p>React &amp; Modern JS</p>
+            </div>
+            <div class="info-card">
+              <span class="info-card__icon">💼</span>
+              <strong>Status</strong>
+              <p>Open to opportunities</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Projects ───────────────────────────────────────────── -->
+    <section id="projects" class="projects section section--dark">
+      <div class="container">
+        <p class="section__label section__label--light">What I've built</p>
+        <h2 class="section__title section__title--light">Projects</h2>
+        <div class="projects__grid">
+
+          <article class="project-card">
+            <div class="project-card__header project-card__header--purple">
+              <div class="project-card__header-top">
+                <span class="project-card__badge project-card__badge--live">● Live</span>
+                <span class="project-card__emoji">📈</span>
+              </div>
+              <h3 class="project-card__title">FTSE 100 Live Prices</h3>
+            </div>
+            <div class="project-card__body">
+              <p>
+                A real-time stock price tracker for the FTSE 100 index. Fetches live data from
+                Yahoo Finance, supports sorting, searching, and auto-refreshes every 60 seconds.
+              </p>
+              <div class="tech-tags">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">REST API</span>
+              </div>
+            </div>
+            <div class="project-card__footer">
+              <a href="ftse100.html" class="btn btn--sm btn--primary" target="_blank" rel="noopener">View live ↗</a>
+              <a href="https://github.com/" class="btn btn--sm btn--ghost" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card project-card--soon">
+            <div class="project-card__header project-card__header--cyan">
+              <div class="project-card__header-top">
+                <span class="project-card__badge">⏳ Soon</span>
+                <span class="project-card__emoji">🚀</span>
+              </div>
+              <h3 class="project-card__title">Next Project</h3>
+            </div>
+            <div class="project-card__body">
+              <p>
+                Something new is in the works. Follow me on GitHub to see what I'm
+                building in real time.
+              </p>
+              <div class="tech-tags">
+                <span class="tech-tag">TBD</span>
+              </div>
+            </div>
+            <div class="project-card__footer">
+              <span class="project-card__wip">In progress…</span>
+            </div>
+          </article>
+
+          <article class="project-card project-card--soon">
+            <div class="project-card__header project-card__header--orange">
+              <div class="project-card__header-top">
+                <span class="project-card__badge">⏳ Soon</span>
+                <span class="project-card__emoji">💡</span>
+              </div>
+              <h3 class="project-card__title">Another Project</h3>
+            </div>
+            <div class="project-card__body">
+              <p>
+                This slot is reserved for the next thing I build. Every great portfolio
+                starts somewhere — mine starts here.
+              </p>
+              <div class="tech-tags">
+                <span class="tech-tag">TBD</span>
+              </div>
+            </div>
+            <div class="project-card__footer">
+              <span class="project-card__wip">In progress…</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Skills ─────────────────────────────────────────────── -->
+    <section id="skills" class="skills section">
+      <div class="container">
+        <p class="section__label">What I use</p>
+        <h2 class="section__title">Skills</h2>
+        <div class="skills__groups">
+
+          <div class="skill-group">
+            <h3 class="skill-group__label">Languages</h3>
+            <div class="skill-group__items">
+              <div class="skill-chip skill-chip--html">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="" width="22" height="22">
+                HTML5
+              </div>
+              <div class="skill-chip skill-chip--css">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="" width="22" height="22">
+                CSS3
+              </div>
+              <div class="skill-chip skill-chip--js">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" width="22" height="22">
+                JavaScript
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-group__label">Tools &amp; Concepts</h3>
+            <div class="skill-group__items">
+              <div class="skill-chip">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" width="22" height="22">
+                Git
+              </div>
+              <div class="skill-chip">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="" width="22" height="22">
+                GitHub
+              </div>
+              <div class="skill-chip">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="9" height="9" rx="1.5"/><rect x="13" y="2" width="9" height="9" rx="1.5"/><rect x="2" y="13" width="9" height="9" rx="1.5"/><rect x="13" y="13" width="9" height="9" rx="1.5"/></svg>
+                CSS Grid
+              </div>
+              <div class="skill-chip">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+                Flexbox
+              </div>
+              <div class="skill-chip">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                Responsive Design
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-group__label">Currently Learning</h3>
+            <div class="skill-group__items">
+              <div class="skill-chip skill-chip--learning">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" width="22" height="22">
+                React
+              </div>
+              <div class="skill-chip skill-chip--learning">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" width="22" height="22">
+                Node.js
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Market ───────────────────────────────────────────────── -->
+    <section id="market" class="market section section--dark">
+      <div class="container">
+        <p class="section__label section__label--light">Live data</p>
+        <h2 class="section__title section__title--light">Market</h2>
+
+        <div id="market-error" class="market-error" hidden aria-live="assertive"></div>
+
+        <div class="market-grid">
+          <div class="market-subsection">
+            <h3 class="market-subsection__heading">FX Rates</h3>
+            <ul class="ticker-list" id="fx-list" aria-label="Foreign exchange rates" aria-live="polite">
+              <!-- populated by JavaScript -->
+            </ul>
+          </div>
+          <div class="market-subsection">
+            <h3 class="market-subsection__heading">Equities</h3>
+            <ul class="ticker-list" id="equity-list" aria-label="Equity prices" aria-live="polite">
+              <!-- populated by JavaScript -->
+            </ul>
+          </div>
+        </div>
+
+        <p class="market-meta">
+          <span id="market-updated">Awaiting data…</span>
+          <span>&middot; Auto-refresh 60s &middot; Next in <span id="market-countdown">60</span>s</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Crypto ───────────────────────────────────────────────── -->
+    <section id="crypto" class="section">
+      <div class="container">
+        <p class="section__label">Live data</p>
+        <h2 class="section__title">Crypto</h2>
+
+        <div id="crypto-error" class="crypto-error" hidden aria-live="assertive"></div>
+
+        <ul class="coin-list" id="coin-list" aria-label="Cryptocurrency prices" aria-live="polite">
+          <!-- populated by JavaScript -->
+        </ul>
+
+        <p class="crypto-meta">
+          <span id="crypto-updated">Awaiting data…</span>
+          <span>&middot; Auto-refresh 120s &middot; Next in <span id="crypto-countdown">120</span>s</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Countries ────────────────────────────────────────────── -->
+    <section id="countries" class="section section--dark">
+      <div class="container">
+        <p class="section__label section__label--light">Live data</p>
+        <h2 class="section__title section__title--light">Countries</h2>
+
+        <div class="countries-controls">
+          <input type="text" id="country-search" class="country-search"
+                 placeholder="Search by country or capital…" autocomplete="off">
+          <div class="region-filters" role="group" aria-label="Filter by region">
+            <button class="region-btn active" data-region="">All</button>
+            <button class="region-btn" data-region="Africa">Africa</button>
+            <button class="region-btn" data-region="Americas">Americas</button>
+            <button class="region-btn" data-region="Asia">Asia</button>
+            <button class="region-btn" data-region="Europe">Europe</button>
+            <button class="region-btn" data-region="Oceania">Oceania</button>
+          </div>
+        </div>
+
+        <div id="countries-error" class="market-error" hidden aria-live="assertive"></div>
+
+        <div class="country-grid" id="country-grid" aria-live="polite">
+          <!-- populated by JavaScript -->
+        </div>
+
+        <div class="countries-footer" id="countries-footer" hidden>
+          <span class="countries-count" id="countries-count"></span>
+          <button class="btn btn--outline btn--sm" id="countries-more">Load more</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Contact ────────────────────────────────────────────── -->
+    <section id="contact" class="contact section section--dark">
+      <div class="container contact__inner">
+        <p class="section__label section__label--light">What's next?</p>
+        <h2 class="section__title section__title--light">Get In Touch</h2>
+        <p class="contact__text">
+          I'm currently open to new opportunities. Whether you have a question, a project
+          idea, or just want to say hi — my inbox is always open!
+        </p>
+        <a href="mailto:paul.simon.hardy@gmail.com" class="btn btn--primary btn--lg">
+          Say Hello 👋
+        </a>
+        <div class="contact__socials">
+          <a href="https://github.com/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
+            GitHub
+          </a>
+          <a href="https://linkedin.com/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>Designed &amp; built by <strong>Paul Hardy</strong></p>
+      <p class="footer__year">2025</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

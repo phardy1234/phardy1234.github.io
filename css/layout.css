@@ -1,0 +1,187 @@
+/* ============================================================
+   layout.css — page chrome (header, footer) & section frames
+   ============================================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+/* ---------- Sticky header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: var(--border);
+  height: var(--header-height);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  height: 100%;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-md);
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.brand__bracket { color: var(--accent); }
+
+/* Mobile hamburger button (the label, since the input is hidden) */
+.hamburger {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 36px;
+  height: 28px;
+  padding: 4px;
+  border: var(--border);
+  background: var(--bg);
+  cursor: pointer;
+  order: 3; /* push to right on mobile */
+}
+.hamburger__bar {
+  display: block;
+  height: 3px;
+  background: var(--ink);
+  transition: transform var(--t-med) var(--ease),
+              opacity var(--t-fast) var(--ease);
+  transform-origin: center;
+}
+
+/* Theme switch (the visible label) */
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: var(--border);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: var(--bg);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+.theme-switch__icon { transition: opacity var(--t-fast) var(--ease); }
+
+/* ---------- Primary nav ---------- */
+.primary-nav {
+  /* Mobile: full-screen drawer hidden by default.
+     Desktop styles (>=641px) override this further down. */
+  position: fixed;
+  inset: var(--header-height) 0 0 0;
+  background: var(--bg);
+  border-top: var(--border);
+  transform: translateY(-100%);
+  transition: transform var(--t-med) var(--ease);
+  z-index: 90;
+  padding: var(--space-7) var(--container-pad);
+}
+
+.primary-nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.primary-nav a {
+  display: inline-block;
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: var(--border-thick);
+  padding-bottom: var(--space-2);
+}
+.primary-nav a:hover,
+.primary-nav a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- Section vertical rhythm ---------- */
+main > section {
+  padding-block: var(--space-8);
+  border-bottom: var(--border);
+  scroll-margin-top: calc(var(--header-height) + var(--space-2));
+}
+
+main > section:nth-of-type(even) {
+  background: var(--bg-alt);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: var(--border-thick);
+  padding-block: var(--space-6);
+  background: var(--ink);
+  color: var(--bg);
+}
+.site-footer a { color: var(--bg); text-decoration-color: var(--accent); }
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  text-align: center;
+  font-size: var(--fs-sm);
+}
+.site-footer__copy span { color: var(--muted); }
+
+/* ---------- Contact section label ---------- */
+.contact .section-label {
+  background: teal;
+  border-color: teal;
+}
+
+/* ============================================================
+   Breakpoints
+   ============================================================ */
+
+@media (min-width: 641px) {
+
+  .hamburger { display: none; }
+
+  .primary-nav {
+    position: static;
+    inset: auto;
+    transform: none;
+    border-top: 0;
+    padding: 0;
+    background: transparent;
+  }
+
+  .primary-nav__list {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-5);
+  }
+
+  .primary-nav a {
+    font-size: var(--fs-sm);
+    border-bottom: 0;
+    padding-bottom: 0;
+    letter-spacing: 0.08em;
+  }
+
+  .site-footer__inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+}
+
+@media (min-width: 1024px) {
+  main > section { padding-block: var(--space-9); }
+}
